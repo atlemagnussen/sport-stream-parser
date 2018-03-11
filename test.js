@@ -1,9 +1,14 @@
-const htmlHandler = require('./htmlHandler.js');
-const fs = require("fs");
-const url = "https://www.streamsports.io/live/england/premier-league/18843/afc-bournemouth-vs-tottenham-hotspur/"
-const localFileName = "./testFiles/bou-tot.html"
+'use strict';
+// const htmlHandler = require('./htmlHandler.js');
+const acestreamParser = require('./acestreamParser.js');
+var config = {
+    match: "bou-tot",
+    streamSite: "https://www.streamsports.io/live/england/premier-league/18843/afc-bournemouth-vs-tottenham-hotspur/",
+    outputFileName: "./testFiles/ace.m3u"
+};
 
-htmlHandler.getHtmlHttps(url)
+
+acestreamParser.GetAceStreamM3uList(config)
 .then(res => {
     console.log(res);
 });
