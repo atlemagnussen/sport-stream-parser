@@ -8,7 +8,8 @@ Beta version 0.1.0
 https://www.streamsports.io/live/england/premier-league/18843/afc-bournemouth-vs-tottenham-hotspur/
 
 #Output
-```#EXTM3U
+```
+#EXTM3U
 
 #EXTINF:-1 tvg-logo="http://www.chemistryviews.org/common/images/thumbnails/source/129ad1e3047.jpg" group-title="INFO", Match1
 acestream://d33f71d8cbf26b01a8c770e391cd926db44d1513
