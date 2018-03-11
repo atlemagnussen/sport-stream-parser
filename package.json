@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/atlemagnussen/sport-stream-parser#readme",
   "dependencies": {
-    "htmlparser2": "^3.9.2",
-    "npm": "^5.7.1"
+    "htmlparser2": "^3.9.2"
   }
 }
