@@ -21,7 +21,6 @@ app.get('/', function(req, res) {
     res.sendfile('client/index.html');
 });
 
-router.use(express.json());
 router.post('/parse', function (req, res) {
     var config = {
         match: req.body.match,
@@ -37,6 +36,7 @@ router.post('/parse', function (req, res) {
     });
 });
 
+app.use(express.json());
 app.use('/api', router);
 app.listen(port);
 console.log("Listening on port: " + port);
