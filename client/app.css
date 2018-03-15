@@ -11,3 +11,9 @@ body {
     border: none;
     padding: 5px;
 }
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+}
