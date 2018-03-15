@@ -2,3 +2,12 @@ body {
     background: black;
     color: white;
 }
+.input {
+    width: 800px;
+}
+.result {
+    width: 1200px;
+    height: 600px;
+    border: none;
+    padding: 5px;
+}

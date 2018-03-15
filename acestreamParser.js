@@ -1,4 +1,5 @@
-const matchM3uTemplate = `\n\n#EXTINF:-1 tvg-logo="http://www.chemistryviews.org/common/images/thumbnails/source/129ad1e3047.jpg" group-title="INFO", `;
+const logoUrl = "http://www.chemistryviews.org/common/images/thumbnails/source/129ad1e3047.jpg";
+const matchM3uTemplate = `\n\n#EXTINF:-1 tvg-logo="${logoUrl}" group-title="INFO", `;
 var counter = 0;
 const htmlHandler = require('./htmlHandler.js');
 const htmlparser = require("htmlparser2");
