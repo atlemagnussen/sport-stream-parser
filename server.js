@@ -1,5 +1,6 @@
-const port = 8080;
+const port = 8000;
 const acestreamParser = require('./acestreamParser.js');
+const path = require('path');
 var express = require('express');
 var app = express();
 var router = express.Router();
@@ -9,18 +10,17 @@ var staticOpts = {
     dotfiles: 'ignore',
     etag: false,
     extensions: ['js', 'html'],
-    index: false,
+    index: 'index.html',
     maxAge: '1d',
     redirect: false,
     setHeaders: function (res) {
         res.set('x-timestamp', Date.now());
     }
 };
-app.use(express.static('client', staticOpts));
-app.get('/', function(req, res) {
-    res.sendfile('client/index.html');
-});
 
+var clientPath = path.join(__dirname, 'client');
+console.log("clientPath=" + clientPath);
+app.use(express.static(clientPath, staticOpts));
 router.post('/parse', function (req, res) {
     var config = {
         match: req.body.match,
@@ -35,6 +35,9 @@ router.post('/parse', function (req, res) {
         res.send(result);
     });
 });
+
+app.set('trust proxy', true);
+app.set('trust proxy', 'loopback');
 
 app.use(express.json());
 app.use('/api', router);
