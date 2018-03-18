@@ -18,7 +18,7 @@ var staticOpts = {
     }
 };
 
-var clientPath = path.join(__dirname, 'client');
+var clientPath = path.join(__dirname, 'web');
 console.log("clientPath=" + clientPath);
 app.use(express.static(clientPath, staticOpts));
 router.post('/parse', function (req, res) {

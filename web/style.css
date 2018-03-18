@@ -1,0 +1,97 @@
+html,
+body, .full-screen {
+    height: 100%;
+}
+
+body {
+    background: #013220;
+    margin: 0;
+    padding 5px;
+    color: white;
+}
+
+.full-screen {
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background: black;
+    width: 100%;
+    height: auto;
+}
+
+section {
+    width: 100%;
+    background: #013220;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.view {
+    overflow: auto;
+    flex: 6;
+    text-align: center;
+}
+.left, .right {
+    flex: 1;
+    background: #013220;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+/******** scrollbar *********/
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:window-inactive,
+::-webkit-scrollbar-thumb {
+        background:  grey;
+}
+button {
+    background: black;
+    color: white;
+}
+.input {
+    width: 80%;
+}
+.result {
+    width: 98%;
+    height: 600px;
+    border: none;
+    padding: 5px;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+}
+
+@media only screen and (max-width : 640px) {
+    section {
+        flex-direction: column;
+    }
+    .view {
+        width: 100%;
+        order: 0;
+    }
+    .left {
+        width: 100%;
+        order: 1;
+    }
+    .right {
+        width: 100%;
+        order: 2
+    }
+    .input {
+        width: 96%;
+    }
+    .result {
+        width: 96%;
+        border: none;
+        padding: 5px;
+    }
+}

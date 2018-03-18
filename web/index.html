@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <title>Sports stream parser</title>
+</head>
+
+<body>
+    <div class="full-screen">
+        <header>
+            <nav>
+                <a href="#" id="menu-icon"></a>
+                <ul id="menu-items">
+                    <li><a href="#" class="current">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <aside class="left">
+                .
+            </aside>
+            <div class="view">
+                <p>
+                    match:<br />
+                    <input class="input" type="text" id="match" />
+                </p>
+                <p>
+                    url:<br />
+                    <input class="input" type="text" id="matchUrl" />
+                </p>
+                <p>
+                    <button id="btnPost">Get acestream playlist</button><br />
+                    <textarea class="result" id="taResult"></textarea>
+                </p>
+                <p>
+                    <a href="https://github.com/atlemagnussen/sports-stream-parser">https://github.com/atlemagnussen/sports-stream-parser</a>
+                </p>
+            </div>
+            <aside class="right">
+                .
+            </aside>
+        </section>
+    </div>
+    <script src="rest.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
