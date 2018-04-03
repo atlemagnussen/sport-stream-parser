@@ -7,6 +7,7 @@ const htmlparser = require("htmlparser2");
 
 class AcestreamParser {
     GetAceStreamM3uList(config) {
+        counter = 0;
         let output = "#EXTM3U";
         var parser = new htmlparser.Parser({
             onopentag: (name, attribs) => {
