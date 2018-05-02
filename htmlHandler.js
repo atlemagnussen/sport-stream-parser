@@ -1,11 +1,20 @@
 'use strict';
-// const http = require('http');
+const http = require('http');
 const https = require('https');
 
 class htmlHandler {
-    getHtmlHttps(url) {
+    getHtmlFromUrl(url) {
+        if (url.indexOf("https://") === 0) {
+            return this.getHtml(url, https);
+        } else if (url.indexOf("http://") === 0) {
+            return this.getHtml(url, http);
+        }
+        throw "Not supported url, neither http or https!";
+    }
+
+    getHtml(url, httpHandler) {
         return new Promise((resolve, reject) => {
-            var request = https.request(url, function (res) {
+            var request = httpHandler.request(url, function (res) {
                 var data = '';
                 res.on('data', function (chunk) {
                     data += chunk;

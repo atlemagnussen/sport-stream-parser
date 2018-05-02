@@ -18,7 +18,7 @@ class AcestreamParser {
                 }
             }
         }, {decodeEntities: true});
-        var promise = htmlHandler.getHtmlHttps(config.streamSite)
+        var promise = htmlHandler.getHtmlFromUrl(config.streamSite)
         .then(html => {
             parser.write(html);
             parser.end();
