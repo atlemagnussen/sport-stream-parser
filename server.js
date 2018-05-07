@@ -1,4 +1,3 @@
-const port = 8000;
 const acestreamParser = require('./acestreamParser.js');
 const fileHandler = require('./fileHandler.js');
 const path = require('path');
@@ -6,6 +5,8 @@ const express = require('express');
 var app = express();
 var router = express.Router();
 const os = require('os');
+
+var port = process.argv[2] || 8000;
 
 // static /
 var staticOpts = {
