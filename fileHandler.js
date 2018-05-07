@@ -1,5 +1,6 @@
 'use strict';
-var fs = require('fs');
+const fs = require('fs');
+const path = require('path');
 class FileHandler {
 
     save(content, directory, name) {
@@ -8,7 +9,7 @@ class FileHandler {
                 fs.mkdirSync(directory);
                 this.emitCommand(`Created ${directory} folder`);
             }
-            let fullPath = directory + "/" + name;
+            var fullPath = path.join(directory, name);
             fs.writeFile(fullPath, content, (err) => {
                 if(err) {
                     let errorMsg = `Writing config file went wrong ${err}`;

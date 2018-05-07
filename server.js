@@ -2,7 +2,7 @@ const port = 8000;
 const acestreamParser = require('./acestreamParser.js');
 const fileHandler = require('./fileHandler.js');
 const path = require('path');
-var express = require('express');
+const express = require('express');
 var app = express();
 var router = express.Router();
 const os = require('os');
@@ -34,7 +34,10 @@ router.post('/parse', function (req, res) {
     acestreamParser.GetAceStreamM3uList(config)
     .then(result => {
         console.log(result);
-        fileHandler.save(result, os.homedir(), "ace.m3u");
+        fileHandler.save(result, os.homedir(), "ace.m3u")
+        .then(res => {
+            console.log(res);
+        });
         res.send(result);
     });
 });

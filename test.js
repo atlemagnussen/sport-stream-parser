@@ -1,5 +1,6 @@
 'use strict';
 const os = require('os');
+const path = require('path');
 // const htmlHandler = require('./htmlHandler.js');
 const acestreamParser = require('./acestreamParser.js');
 
@@ -25,4 +26,7 @@ acestreamParser.GetAceStreamM3uList(configHttps)
     console.log(res);
 });
 
-console.log(os.homedir());
+var homedir = os.homedir();
+console.log(`homedir: ${homedir}`);
+var fullpath = path.join(homedir, 'ace.m3u');
+console.log(`fullpath: ${fullpath}`);
