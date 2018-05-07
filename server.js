@@ -5,6 +5,7 @@ const path = require('path');
 var express = require('express');
 var app = express();
 var router = express.Router();
+const os = require('os');
 
 // static /
 var staticOpts = {
@@ -33,7 +34,7 @@ router.post('/parse', function (req, res) {
     acestreamParser.GetAceStreamM3uList(config)
     .then(result => {
         console.log(result);
-        fileHandler.save(result, "/home/atle", "ace.m3u");
+        fileHandler.save(result, os.homedir(), "ace.m3u");
         res.send(result);
     });
 });

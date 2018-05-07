@@ -1,4 +1,5 @@
 'use strict';
+const os = require('os');
 // const htmlHandler = require('./htmlHandler.js');
 const acestreamParser = require('./acestreamParser.js');
 
@@ -23,3 +24,5 @@ acestreamParser.GetAceStreamM3uList(configHttps)
 .then(res => {
     console.log(res);
 });
+
+console.log(os.homedir());
